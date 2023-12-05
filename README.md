@@ -1,6 +1,5 @@
-# Whisper GUI
-
-
+# Whisper GUI v1.0
+A simple tkinter GUI to run Whisper for your audio files (basically Whisper with a GUI frontend).
 
 ## Getting started
 
