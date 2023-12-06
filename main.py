@@ -1,4 +1,5 @@
 import tkinter as tk
+import torch
 from tkinter import filedialog, messagebox
 import whisper
 import threading
@@ -11,10 +12,16 @@ current_model_name = "base"  # Default model size
 
 def load_model(model_name):
     global current_model, current_model_name
-    if model_name != current_model_name or current_model is None:
-        current_model_name = model_name
-        current_model = whisper.load_model(model_name)
-
+    try:
+        device = torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
+        if model_name != current_model_name or current_model is None:
+            current_model_name = model_name
+            current_model = whisper.load_model(model_name).to(device)
+    except NotImplementedError as e:
+        # Fallback if compat is not resolved
+        print("MPS not supported for this operation, falling back to CPU. Error ", e)
+        device = torch.device("cpu")
+        current_model = whisper.load_model(model_name).to(device)
 def select_file():
     file_path = filedialog.askopenfilename()
     file_label.config(text=file_path)
