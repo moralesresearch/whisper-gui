@@ -40,7 +40,7 @@ app = BUNDLE(
     name='OpenTranscribe.app',
     icon=None,
     bundle_identifier=None,
-    version='2.0',
+    version='3.0',
     info_plist={
             'NSPrincipalClass': 'NSApplication',
             'NSAppleScriptEnabled': False,
