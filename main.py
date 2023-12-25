@@ -80,7 +80,7 @@ def save_file(text, file_type):
 
 # Create the main window
 root = tk.Tk()
-root.title("Whisper GUI")
+root.title("OpenTranscribe")
 root.geometry("600x600")  # Set window size
 
 # Model selection
