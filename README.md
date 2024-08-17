@@ -15,4 +15,6 @@ If there's any issues or a bug, please open an issue on the issues page on [GitL
 ## Authors and acknowledgment
 (c) 2023 Abdon Morales Jr and Morales Research Corp.
 
+This project has been archived on August 16, 2024 since pretty much OpenAI's chatGPT is as capable in its upcoming updates to do TTS or grab transcriptions from audio/video. Thus, this project is now considered obselete.
+
 This project is based on [OpenAI's Whisper](https://github.com/openai/whisper)
